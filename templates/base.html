@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width-device-width, initial-scale=1.0" name="viewport">
+        <title>Chatbot</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </head>
+
+    <style>
+        .card {
+            width: 500px;
+            margin: 10 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .list-container {
+            overflow: hidden;
+            height: 150px;
+            position: relative;
+        }
+        .list {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            animation: moveList 20s linear infinite;
+        }
+        @keyframes moveList {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            margin: 0;
+            padding: 10px;
+        }
+
+        body {
+            background-image: url("path/to/your/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQan42Fxc9uiv16_eaduVlcKgopu-G-w5w1eg");
+            background-size: cover;
+            background-position: center;
+        }
+
+    </style>
+
+    <body>
+            <div class="chatbox">
+                <div class="chatbox__button">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/bot.jpg') }}" alt="image" style="width: 100px; border-radius: 50px; margin-left: 175px; margin-top: -20px;">
+                        <h5>Chat with Me</h5>
+                        <button style="width: 50%; margin: auto;"><img src="{{ url_for('static', filename='images/message.png') }}" style="width: 35px;"/></button>
+                    </div>
+                </div>
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <div class="chatbox__image--header">
+                            <img src="{{ url_for('static', filename='images/bot.jpg') }}" alt="image" style="width: 45px; border-radius: 50px;">
+                        </div>
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Chat support</h4>
+                            <p class="chatbox__description--header">Hi, I am here to help you !!!</p>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <div></div>
+                    </div>
+                    <div class="chatbox__footer">
+                        <input type="text" placeholder="Write a message...">
+                        <button class="chatbox__send--footer send__button">Send</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                $SCRIPT_ROOT = {{ request.script_root|tojson }} ;
+            </script>
+            <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </body>
+</html>
